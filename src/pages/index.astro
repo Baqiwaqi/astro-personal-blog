@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import getSortedPosts from '../utils/getSortedPosts'
+import WorkArticle from '../components/WorkArticle.astro'
 
 const posts = await getCollection('blog')
 
@@ -16,8 +17,8 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
       alt="Astro Logo"
       class="rounded-full h-52 w-52 object-cover mx-auto"
    />
-
-   <h1 class="text-xl font-semibold mt-16">Software developer</h1>
+   <h1 class="text-3xl font-semibold mt-8">Tim Bouma</h1>
+   <h2 class="text-xl">Software developer</h2>
    <p class="text-sm mt-4">
       I am Tim, a developer based in Utrecht. Your can describe me as a
       proactive person, someone who likes to work in teams. I like to work on
@@ -25,12 +26,34 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
       technologies.
    </p>
 
-   <section>
-      <h2 class="text-xl font-semibold mt-16">Recent blog posts</h2>
+   <section class="mt-8">
+      <h2 class="text-xl font-semibold">Works</h2>
+      <WorkArticle
+         company="Bizworx Solutions Provider"
+         role="Software developer"
+         timeLine="2020 - currently"
+         description="I worked at Bizworx as a software developer. I worked on a project for the Dutch government."
+      />
+      <WorkArticle
+         company="Bizworx Solutions Provider"
+         role="Intern Software Developer"
+         timeLine="2020 - 2020"
+         description="I worked at Bizworx as a software developer. I worked on a project for the Dutch government."
+      />
+      <WorkArticle
+         company="MCH Information Solutions"
+         role="Inter Software Developer"
+         timeLine="2019 - 2019"
+         description="I worked at Bizworx as a software developer. I worked on a project for the Dutch government."
+      />
+   </section>
+
+   <section class="mt-8">
+      <h2 class="text-xl font-semibold">Recent posts</h2>
       {
          featuredPosts.map((p) => {
             return (
-               <article class="my-6">
+               <article class="my-4">
                   <a href={`blog/${p.data.postSlug}`}>
                      <h3 class="text-lg font-semibold mt-4">{p.data.title}</h3>
                      <p class=" text-sm mt-4">{p.data.description}</p>

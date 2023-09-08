@@ -4,7 +4,9 @@ import ThemeToggle from '../ThemeToggle.tsx'
 const currentPath = Astro.url.pathname
 ---
 
-<header class="sticky top-0 left-0 right-0 z-10">
+<header
+   class="sticky top-0 left-0 right-0 z-10 bg-transparent backdrop:bg-transparent backdrop-filter backdrop-blur-lg"
+>
    <div
       class="conainer mx-auto max-w-3xl flex items-center justify-between px-4"
    >
