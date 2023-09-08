@@ -1,52 +1,53 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import Header from "../components/layouts/Header.astro";
+import { ViewTransitions } from 'astro:transitions'
+import Header from '../components/layouts/Header.astro'
 
 interface Props {
-  title: string;
+   title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-    <ViewTransitions />
-    
-    <!-- script for theme prevent from flashing -->
-    <script is:inline>
-      const theme = (() => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.getItem("theme");
-        }
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        }
-        return "light";
-      })();
-      if (theme === "light") {
-        document.documentElement.classList.remove("dark");
-      } else {
-        document.documentElement.classList.add("dark");
-      }
-    </script>
-  </head>
-  <body
-    class="bg-slate-100 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
-    <!-- header -->
-    <Header />
-    <!-- content -->
-    <slot />
-    <!-- footer -->
-  </body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="description" content="Astro description" />
+      <meta name="viewport" content="width=device-width" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="generator" content={Astro.generator} />
+      <title>{title}</title>
+
+      <ViewTransitions />
+
+      <!-- script for theme prevent from flashing -->
+      <script is:inline>
+         const theme = (() => {
+            if (
+               typeof localStorage !== 'undefined' &&
+               localStorage.getItem('theme')
+            ) {
+               return localStorage.getItem('theme')
+            }
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+               return 'dark'
+            }
+            return 'light'
+         })()
+         if (theme === 'light') {
+            document.documentElement.classList.remove('dark')
+         } else {
+            document.documentElement.classList.add('dark')
+         }
+      </script>
+   </head>
+   <body
+      class="bg-stone-100 text-stone-900 dark:bg-stone-900 dark:text-stone-100"
+   >
+      <Header />
+      <aside class="conainer mx-auto max-w-3xl px-4 py-8">
+         <slot />
+      </aside>
+   </body>
 </html>

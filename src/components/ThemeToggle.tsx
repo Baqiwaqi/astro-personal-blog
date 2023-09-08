@@ -1,8 +1,8 @@
 //  create a theme toggle button
-import { useEffect, useState } from "react";
-import { IoSunny, IoMoon } from 'react-icons/io5/index.js';
+import { useEffect, useState } from 'react'
+import { IoSunny, IoMoon } from 'react-icons/io5/index.js'
 
-const themes = ["light", "dark"];
+const themes = ['light', 'dark']
 
 const ThemeToggle = () => {
    const [isMounted, setIsMounted] = useState(false)
@@ -18,7 +18,7 @@ const ThemeToggle = () => {
       }
       return 'light'
    })
-   
+
    const toggleTheme = () => {
       const t = theme === 'light' ? 'dark' : 'light'
       localStorage.setItem('theme', t)
@@ -50,11 +50,10 @@ const ThemeToggle = () => {
                <IoSunny className="w-5 h-5 text-zinc-900 dark:text-zinc-300" />
             )}
          </button>
-
       </div>
    ) : (
       <div />
    )
-};
+}
 
-export default ThemeToggle;
+export default ThemeToggle
