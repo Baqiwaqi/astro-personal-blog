@@ -6,6 +6,8 @@ import getSortedPosts from '../utils/getSortedPosts'
 const posts = await getCollection('blog')
 
 const sortedPosts = getSortedPosts(posts)
+
+const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
 ---
 
 <Layout title="Home">
@@ -14,8 +16,9 @@ const sortedPosts = getSortedPosts(posts)
       alt="Astro Logo"
       class="rounded-full h-52 w-52 object-cover mx-auto"
    />
+
    <h1 class="text-xl font-semibold mt-16">Software developer</h1>
-   <p class="text-stone-700 text-sm mt-4">
+   <p class="text-sm mt-4">
       I am Tim, a developer based in Utrecht. Your can describe me as a
       proactive person, someone who likes to work in teams. I like to work on
       projects that are challenging and find solutions with the most recent
@@ -25,13 +28,13 @@ const sortedPosts = getSortedPosts(posts)
    <section>
       <h2 class="text-xl font-semibold mt-16">Recent blog posts</h2>
       {
-         sortedPosts.map((p) => {
+         featuredPosts.map((p) => {
             return (
-               <article class="">
-                  <h3 class="text-lg font-semibold mt-4">{p.data.title}</h3>
-                  <p class="text-stone-700 text-sm mt-4">
-                     {p.data.description}
-                  </p>
+               <article class="my-6">
+                  <a href={`blog/${p.data.postSlug}`}>
+                     <h3 class="text-lg font-semibold mt-4">{p.data.title}</h3>
+                     <p class=" text-sm mt-4">{p.data.description}</p>
+                  </a>
                </article>
             )
          })

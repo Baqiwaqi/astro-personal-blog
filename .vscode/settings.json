@@ -6,5 +6,6 @@
    },
    "[astro]": {
       "editor.defaultFormatter": "astro-build.astro-vscode"
-   }
+   },
+   "css.customData": [".vscode/tailwind.json"]
 }
