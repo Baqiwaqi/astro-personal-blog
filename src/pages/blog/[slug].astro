@@ -25,7 +25,7 @@ const { Content } = await post.render()
 ---
 
 <Layout title={post.data.title}>
-   <h1>{post.data.title}</h1>
+   <h1 transition:name={post.id}>{post.data.title}</h1>
    <Content />
 </Layout>
 

@@ -7,30 +7,26 @@ const currentPath = Astro.url.pathname
 <header
    class="sticky top-0 left-0 right-0 z-10 bg-transparent backdrop:bg-transparent backdrop-filter backdrop-blur-lg"
 >
-   <div
-      class="conainer mx-auto max-w-3xl flex items-center justify-between px-4"
-   >
+   <div class="conainer mx-auto max-w-3xl flex items-center justify-between px-4">
       <div class="space-x-2">
-         <a
-            href="/"
-            class={currentPath === '/' ? 'text-lg font-bold' : 'text-lg'}
-            >Home</a
-         >
+         <a href="/" class={currentPath === '/' ? 'text-lg font-bold' : 'text-lg'}>
+            Home
+         </a>
          <a
             href="/about"
             class={currentPath === '/about' ? 'text-lg font-bold' : 'text-lg'}
-            >About</a
          >
+            About
+         </a>
          <a
             href="/blog"
             class={currentPath === '/blog' ? 'text-lg font-bold' : 'text-lg'}
-            >Blog</a
          >
+            Blog
+         </a>
          <a
             href="/projects"
-            class={currentPath === '/projects'
-               ? 'text-lg font-bold'
-               : 'text-lg'}
+            class={currentPath === '/projects' ? 'text-lg font-bold' : 'text-lg'}
          >
             Projects
          </a>

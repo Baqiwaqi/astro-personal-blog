@@ -9,8 +9,13 @@ interface Props {
 const { company, role, timeLine, description } = Astro.props
 ---
 
-<article class="my-4">
-   <h3 class="text-lg font-semibold">{company}</h3>
-   <h4 class="text-md italic">{role} | {timeLine}</h4>
+<article class="mt-2 mb-4">
+   <div class="flex items-baseline justify-between">
+      <h4 class="text-lg font-semibold">
+         {role}
+      </h4>
+      <span class="text-sm ml-2">{timeLine}</span>
+   </div>
+   <h3 class="text-md text-stone-600 dark:text-stone-300">{company}</h3>
    <p class="text-sm">{description}</p>
 </article>

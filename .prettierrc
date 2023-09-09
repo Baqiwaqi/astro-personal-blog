@@ -2,7 +2,7 @@
    "semi": false,
    "trailingComma": "es5",
    "singleQuote": true,
-   "printWidth": 80,
+   "printWidth": 85,
    "tabWidth": 3,
    "astroAllowShorthand": false
 }

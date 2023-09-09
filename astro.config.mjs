@@ -7,7 +7,7 @@ import react from '@astrojs/react'
 export default defineConfig({
    integrations: [
       tailwind({
-         applyBaseStyles: false,
+            applyBaseStyles: false,
       }),
       react(),
    ],

@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import getSortedPosts from '../../utils/getSortedPosts'
+import BlogArticle from '../../components/BlogArticle.astro'
+
+const posts = await getCollection('blog')
+const sortedPosts = getSortedPosts(posts)
+---
+
+<Layout title="Blog">
+   <h1>Blog</h1>
+   {
+      sortedPosts.map((p) => (
+         <BlogArticle
+            id={p.id}
+            slug={p.data.postSlug}
+            title={p.data.title}
+            description={p.data.description}
+         />
+      ))
+   }
+</Layout>
