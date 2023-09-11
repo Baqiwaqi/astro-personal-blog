@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
-import getSortedPosts from '../utils/getSortedPosts'
+import { getSortedPosts, getSortedWorks } from '../utils/getSortedPosts'
 import WorkArticle from '../components/cards/WorkArticle.astro'
 import BlogArticle from '../components/cards/BlogArticle.astro'
 
@@ -12,7 +12,8 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
 
 // work posts
 const works = await getCollection('work')
-const featuredWorks = works.filter(({ data }) => data.featured)
+const sortedWorks = getSortedWorks(works)
+const featuredWorks = sortedWorks.filter(({ data }) => data.featured)
 ---
 
 <Layout title="Home">
@@ -41,6 +42,7 @@ const featuredWorks = works.filter(({ data }) => data.featured)
                   slug={p.data.postSlug}
                   title={p.data.title}
                   description={p.data.description}
+                  tags={p.data.tags}
                />
             ))
          }

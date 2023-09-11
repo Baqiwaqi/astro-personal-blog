@@ -1,12 +1,15 @@
 ---
+import Badge from '../Badge.astro'
+
 interface Props {
    id: string
    slug: string
    title: string
    description: string
+   tags: string[]
 }
 
-const { id, slug, title, description }: Props = Astro.props
+const { id, slug, title, description, tags }: Props = Astro.props
 ---
 
 <article class="group rounded-md p-4 bg-blue-50 dark:bg-slate-800 mt-4 t">
@@ -20,9 +23,14 @@ const { id, slug, title, description }: Props = Astro.props
       <p class="text-sm">
          {description}
       </p>
-
+      <!-- tags -->
+      <div class="flex flex-wrap items-center justify-start mt-4">
+         {tags.map((t) => <Badge tag={t} />)}
+      </div>
       <!-- read more -->
-      <div class="flex text-sm mt-2 group-hover:text-indigo-600 transition-colors duration-500 ease-in-out"">
+      <div
+         class="flex text-sm mt-2 group-hover:text-indigo-600 transition-colors duration-500 ease-in-out"
+      >
          Read more
          <span class="hidden group-hover:flex ml-1"> →</span>
       </div>

@@ -1,8 +1,9 @@
 ---
-import { getCollection } from 'astro:content'
+import { getCollection, type CollectionEntry } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
-import getSortedPosts from '../../utils/getSortedPosts'
+import { getSortedPosts } from '../../utils/getSortedPosts'
 import BlogArticle from '../../components/cards/BlogArticle.astro'
+import { collections } from '../../content/config'
 
 const posts = await getCollection('blog')
 const sortedPosts = getSortedPosts(posts)
@@ -20,6 +21,7 @@ const sortedPosts = getSortedPosts(posts)
             slug={p.data.postSlug}
             title={p.data.title}
             description={p.data.description}
+            tags={p.data.tags}
          />
       ))
    }
