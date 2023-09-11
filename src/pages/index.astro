@@ -2,14 +2,17 @@
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import getSortedPosts from '../utils/getSortedPosts'
-import WorkArticle from '../components/WorkArticle.astro'
-import BlogArticle from '../components/BlogArticle.astro'
+import WorkArticle from '../components/cards/WorkArticle.astro'
+import BlogArticle from '../components/cards/BlogArticle.astro'
 
+// blog posts
 const posts = await getCollection('blog')
-
 const sortedPosts = getSortedPosts(posts)
-
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
+
+// work posts
+const works = await getCollection('work')
+const featuredWorks = works.filter(({ data }) => data.featured)
 ---
 
 <Layout title="Home">
@@ -21,14 +24,15 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
 
    <section class="mt-16">
       <h2 class="text-md font-semibold uppercase text-pink-600">About me</h2>
-      <p class="text-sm mt-4">
+      <p class="text-sm my-4">
          I am Tim, a developer based in Utrecht. I like to work on projects that are
          challenging and find solutions with the most recent technologies.
       </p>
+      <a href="/about" class="text-indigo-500 hover:underline"> More about me</a>
    </section>
 
    <section class="mt-8">
-      <h2 class="text-md font-semibold uppercase text-pink-600">Recent posts</h2>
+      <h2 class="text-md font-semibold uppercase text-pink-600">Recent thoughts</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
          {
             featuredPosts.map((p) => (
@@ -43,11 +47,19 @@ const featuredPosts = sortedPosts.filter(({ data }) => data.featured)
       </div>
 
       <section class="mt-8">
-         <h2
-            class="text-lg font-semibold uppercase border-b border-stone-300 max-w-fit"
-         >
-            Projects
-         </h2>
+         <h2 class="text-md font-semibold uppercase text-pink-600">Works</h2>
+         {
+            featuredWorks.map((p) => (
+               <WorkArticle
+                  id={p.id}
+                  slug={p.data.workSlug}
+                  title={p.data.title}
+                  description={p.data.description}
+                  image={p.data.image}
+                  tags={p.data.tags}
+               />
+            ))
+         }
       </section>
    </section>
 </Layout>

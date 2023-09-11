@@ -12,7 +12,6 @@ tags:
 ogImage: ''
 ---
 
-# The Importance of Simple Writing
 
 Simple writing is an important aspect of writing that can have a profound impact on the engagement and connection between the writer and reader. When you use ordinary words and simple sentences, your writing is easier for readers to understand. This leads to deeper engagement with your ideas as the less energy they expend on trying to understand your prose, the more they have left to focus on your thoughts.
 

@@ -1,29 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import WorkArticle from '../components/WorkArticle.astro'
+import ExpArticle from '../components/cards/ExperienceArticle.astro'
+import ExperienceArticle from '../components/cards/ExperienceArticle.astro'
 ---
 
 <Layout title="About">
-   <h1>About</h1>
+   <h1 class="text-md font-semibold uppercase text-pink-600">About me</h1>
 
    <section class="mt-8">
       <h2 class="text-md font-medium uppercase text-pink-500">Experience</h2>
-      <WorkArticle
+      <ExperienceArticle
          company="Bizworx Solutions Provider"
          role="Software developer"
-         timeLine="2020 - currently"
+         timeline="2020 - currently"
          description="In mijn huidige functie ben ik verantwoordelijk voor de ontwikkeling van webapplicaties en tools met Next.js in TypeScript. Hierbij maak ik gebruik van serverless resources op het Microsoft Azure-platform."
       />
-      <WorkArticle
+      <ExperienceArticle
          company="Bizworx Solutions Provider"
          role="Intern Software Developer"
-         timeLine="2020 - 2020"
+         timeline="2020 - 2020"
          description="Als interne softwareontwikkelaar heb ik gewerkt aan de ontwikkeling van mobiele applicaties met Flutter voor de luchtvrachts."
       />
-      <WorkArticle
+      <ExperienceArticle
          company="MCH Information Solutions"
          role="Inter Software Developer"
-         timeLine="2019 - 2019"
+         timeline="2019 - 2019"
          description="Als interne softwareontwikkelaar heb ik bijgedragen aan de ontwikkeling van een AI-chatbot en heb ik mijn algemene programmeerkennis uitgebreid."
       />
    </section>

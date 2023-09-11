@@ -9,10 +9,10 @@ interface Props {
 const { id, slug, title, description }: Props = Astro.props
 ---
 
-<article class="group rounded-md">
-   <a href={`blog/${slug}`}>
+<article class="group rounded-md p-4 bg-blue-50 dark:bg-slate-800 mt-4 t">
+   <a href={`thoughts/${slug}`}>
       <h3
-         class="text-lg font-semibold mt-4 group-hover:text-indigo-500"
+         class="text-lg font-semibold group-hover:text-indigo-500 transition-colors duration-300 ease-in-out"
          transition:name={id}
       >
          {title}
@@ -20,8 +20,9 @@ const { id, slug, title, description }: Props = Astro.props
       <p class="text-sm">
          {description}
       </p>
+
       <!-- read more -->
-      <div class="flex text-sm mt-2 group-hover:text-indigo-600">
+      <div class="flex text-sm mt-2 group-hover:text-indigo-600 transition-colors duration-500 ease-in-out"">
          Read more
          <span class="hidden group-hover:flex ml-1"> →</span>
       </div>

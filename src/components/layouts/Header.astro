@@ -2,6 +2,24 @@
 import ThemeToggle from '../ThemeToggle.tsx'
 
 const currentPath = Astro.url.pathname
+const routes = [
+   {
+      path: '/',
+      name: 'Home',
+   },
+   {
+      path: '/about',
+      name: 'About',
+   },
+   {
+      path: '/thoughts',
+      name: 'Thoughts',
+   },
+   {
+      path: '/works',
+      name: 'Works',
+   },
+]
 ---
 
 <header
@@ -9,27 +27,16 @@ const currentPath = Astro.url.pathname
 >
    <div class="conainer mx-auto max-w-3xl flex items-center justify-between px-4">
       <div class="space-x-2">
-         <a href="/" class={currentPath === '/' ? 'text-lg font-bold' : 'text-lg'}>
-            Home
-         </a>
-         <a
-            href="/about"
-            class={currentPath === '/about' ? 'text-lg font-bold' : 'text-lg'}
-         >
-            About
-         </a>
-         <a
-            href="/blog"
-            class={currentPath === '/blog' ? 'text-lg font-bold' : 'text-lg'}
-         >
-            Blog
-         </a>
-         <a
-            href="/projects"
-            class={currentPath === '/projects' ? 'text-lg font-bold' : 'text-lg'}
-         >
-            Projects
-         </a>
+         {
+            routes.map(({ path, name }) => (
+               <a
+                  href={path}
+                  class={currentPath === path ? 'text-md font-bold' : 'text-md'}
+               >
+                  {name}
+               </a>
+            ))
+         }
       </div>
       <ThemeToggle client:visible />
    </div>

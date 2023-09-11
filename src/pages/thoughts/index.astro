@@ -2,14 +2,17 @@
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import getSortedPosts from '../../utils/getSortedPosts'
-import BlogArticle from '../../components/BlogArticle.astro'
+import BlogArticle from '../../components/cards/BlogArticle.astro'
 
 const posts = await getCollection('blog')
 const sortedPosts = getSortedPosts(posts)
 ---
 
-<Layout title="Blog">
-   <h1>Blog</h1>
+<Layout title="Thoughts">
+   <h1 class="text-md font-semibold uppercase text-pink-600">All posts</h1>
+   <p>
+      A collection of my thoughts, essays, learnings and other miscellaneous goodies.
+   </p>
    {
       sortedPosts.map((p) => (
          <BlogArticle

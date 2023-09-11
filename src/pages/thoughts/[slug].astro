@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content'
 import { getCollection } from 'astro:content'
 import Layout from '../../layouts/Layout.astro'
 import '../../styles/markdown.css'
+
 export interface Props {
    post: CollectionEntry<'blog'>
 }
@@ -18,14 +19,22 @@ export async function getStaticPaths() {
    return [...postResults]
 }
 
-const { slug } = Astro.params
 const { post } = Astro.props
 
 const { Content } = await post.render()
 ---
 
 <Layout title={post.data.title}>
-   <h1 transition:name={post.id}>{post.data.title}</h1>
+   <!-- go back button -->
+   <a
+      href="/thoughts"
+      class="text-indigo-500 hover:text-indigo-600 transition:color"
+   >
+      ← Back
+   </a>
+   <!-- title -->
+   <h1 class="text-indigo-500 mt-16" transition:name={post.id}>{post.data.title}</h1>
+   <!-- markdown content -->
    <Content />
 </Layout>
 

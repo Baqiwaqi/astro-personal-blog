@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+
+export interface Props {
+   work: CollectionEntry<'work'>
+}
+
+export async function getStaticPaths() {
+   const works = await getCollection('work')
+
+   const postResults = works.map((work) => ({
+      params: { slug: work.slug },
+      props: { work },
+   }))
+
+   return [...postResults]
+}
+
+const { work } = Astro.props
+
+const { Content } = await work.render()
+---
+
+<Layout title={work.data.title}>
+   <!-- back button -->
+   <a href="/works" class="text-indigo-500 hover:text-indigo-600">&larr; Back</a>
+
+   <h1 class="text-indigo-500 mt-16">{work.data.title}</h1>
+   <!-- <Content /> -->
+   <Content />
+</Layout>
