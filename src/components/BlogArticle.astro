@@ -9,15 +9,21 @@ interface Props {
 const { id, slug, title, description }: Props = Astro.props
 ---
 
-<article
-   class="p-4 border border-stone-300 rounded-md mt-4 h-28 hover:shadow-md transition-shadow dark:border-stone-700 dark:shadow-stone-700"
->
+<article class="group rounded-md">
    <a href={`blog/${slug}`}>
-      <h3 class="text-lg font-semibold mt-4" transition:name={id}>
+      <h3
+         class="text-lg font-semibold mt-4 group-hover:text-indigo-500"
+         transition:name={id}
+      >
          {title}
       </h3>
-      <p class="text-sm line-clamp-1">
+      <p class="text-sm">
          {description}
       </p>
+      <!-- read more -->
+      <div class="flex text-sm mt-2 group-hover:text-indigo-600">
+         Read more
+         <span class="hidden group-hover:flex ml-1"> →</span>
+      </div>
    </a>
 </article>

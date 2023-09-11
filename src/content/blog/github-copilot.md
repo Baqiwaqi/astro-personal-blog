@@ -3,7 +3,7 @@ title: 'GitHub Copilot Review'
 description: 'GitHub CoPilot has been making waves in the coding community since its release. As an AI-powered coding assistant, it has the potential to significantly speed up the coding process and reduce boilerplate code.'
 pubDatetime: 2022-03-01T02:05:51Z
 author: Tim Bouma
-postSlug: first-blog
+postSlug: github-copilot
 featured: false
 draft: false
 tags:

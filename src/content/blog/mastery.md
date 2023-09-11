@@ -3,7 +3,7 @@ title: 'Mastery'
 description: 'The Key to Success and Long-Term Fulfillment'
 pubDatetime: 2022-02-14T02:05:51Z
 author: Tim Bouma
-postSlug: first-blog
+postSlug: mastery
 featured: false
 draft: false
 tags:

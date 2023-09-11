@@ -3,7 +3,7 @@ title: 'The Importance of Simple Writing'
 description: "It's crucial to make sure your words are easily accessible to your readers. Simple writing can achieve this, and in this article, we ll explore the benefits of writing in this way."
 pubDatetime: 2022-10-26T02:05:51Z
 author: Tim Bouma
-postSlug: first-blog
+postSlug: write-simpel
 featured: true
 draft: false
 tags:

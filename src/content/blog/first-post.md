@@ -3,7 +3,7 @@ title: 'My First post'
 description: 'Welcome to my personal blog'
 pubDatetime: 2022-01-01T02:05:51Z
 author: Tim Bouma
-postSlug: first-blog
+postSlug: first-post
 featured: false
 draft: false
 tags:

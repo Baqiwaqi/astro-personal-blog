@@ -3,7 +3,7 @@ title: 'Progess away from the computer'
 description: "Collaboration is amazing!, But don't see collaboration with the outcome of meaningful and creative work"
 pubDatetime: 2022-10-26T02:05:51Z
 author: Tim Bouma
-postSlug: first-blog
+postSlug: my-process
 featured: true
 draft: false
 tags:
