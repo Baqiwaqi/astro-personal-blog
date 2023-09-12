@@ -18,17 +18,17 @@ h6 {
 }
 
 p {
-   @apply mt-2 mb-6;
+   @apply mt-2 mb-6 leading-relaxed text-sm sm:text-base;
 }
 
 blockquote {
-   @apply pl-4 italic border-l-4 border-slate-500;
+   @apply pl-4 italic border-l-4 border-indigo-500;
 }
 
-li {
-   @apply mt-2;
+ul {
+   @apply list-disc ml-8;
 }
 
 ol {
-   @apply list-decimal ml-7;
+   @apply list-decimal ml-8;
 }

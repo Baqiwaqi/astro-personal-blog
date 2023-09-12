@@ -4,15 +4,19 @@ interface Props {
    role: string
    timeline: string
    description: string
+   link: string
 }
 
-const { company, role, timeline, description } = Astro.props
+const { company, role, timeline, description, link } = Astro.props
 ---
 
-<article>
-   <h3>{company}</h3>
-   <h4>{role}</h4>
-   <p>{timeline}</p>
-   <p>{description}</p>
+<article class="group grid grid-cols-4 mt-8">
+   <span class="col-span-1 font-thin text-sm">{timeline}</span>
+   <div class="col-span-3">
+      <h1 class="text-md font-medium group-hover:text-indigo-500">
+         <a href={link} target="_blank">{role}</a>
+      </h1>
+      <h2 class="text-sm font-normal">{company}</h2>
+      <p class="text-xs mt-2 font-thin">{description}</p>
+   </div>
 </article>
-
