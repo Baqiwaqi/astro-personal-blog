@@ -13,12 +13,12 @@ interface Props {
 const { id, slug, title, description, image, tags } = Astro.props
 ---
 
-<article class="group rounded-md p-4 bg-blue-50 dark:bg-slate-800 mt-4">
+<article class="group rounded-md p-4 bg-stone-50 dark:bg-stone-800 mt-4 shadow">
    <a href={`works/${slug}`} class="flex space-x-4 flex-col md:flex-row">
       <div class="flex flex-col justify-between">
          <div>
             <h3
-               class="text-lg font-semibold group-hover:text-indigo-500 transition-colors duration-300 ease-in-out"
+               class="text-lg font-semibold group-hover:text-yellow-500 transition-colors duration-300 ease-in-out"
                transition:name={id}
             >
                {title}

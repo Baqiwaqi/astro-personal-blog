@@ -1,19 +1,19 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import BlogArticle from '../../components/cards/BlogArticle.astro'
 import Layout from '../../layouts/Layout.astro'
 import { getSortedPosts } from '../../utils/getSortedPosts'
-import BlogArticle from '../../components/cards/BlogArticle.astro'
-import { collections } from '../../content/config'
 
 const posts = await getCollection('blog')
 const sortedPosts = getSortedPosts(posts)
 ---
 
 <Layout title="Thoughts">
-   <h1 class="text-md font-semibold uppercase text-pink-600">All posts</h1>
-   <p>
+   <h1 class="text-md text-yellow-500 font-semibold text-primary">All Posts</h1>
+   <p class="text-gray-600 text-sm">
       A collection of my thoughts, essays, learnings and other miscellaneous goodies.
    </p>
+
    {
       sortedPosts.map((p) => (
          <BlogArticle

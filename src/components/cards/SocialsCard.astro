@@ -1,0 +1,19 @@
+---
+interface Props {
+   href: string
+   title: string
+}
+
+const props = Astro.props
+---
+
+<li class="flex mt-4">
+   <a
+      class="group flex items-center text-sm font-medium text-stone-900 transition hover:text-blue-600 dark:text-stone-200 dark:hover:text-blue-600"
+      href={props.href}
+      target="_blank"
+   >
+      <slot />
+      <span class="ml-4">{props.title}</span>
+   </a>
+</li>
