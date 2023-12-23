@@ -3,8 +3,13 @@ import Layout from '../layouts/Layout.astro'
 import ExpArticle from '../components/cards/ExperienceArticle.astro'
 import ExperienceArticle from '../components/cards/ExperienceArticle.astro'
 import SocialsCard from '../components/cards/SocialsCard.astro'
-import { FaXTwitter, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa6'
-import { FiMail } from 'react-icons/fi'
+import {
+   IoLogoGithub,
+   IoLogoInstagram,
+   IoLogoTwitter,
+   IoLogoLinkedin,
+   IoMdMail,
+} from 'react-icons/io'
 ---
 
 <Layout title="About">
@@ -56,25 +61,25 @@ import { FiMail } from 'react-icons/fi'
                title="Follow on Twitter"
                href="https://twitter.com/timbouma"
             >
-               <FaXTwitter />
+               <IoLogoTwitter />
             </SocialsCard>
             <SocialsCard
                title="Follow on Instagram"
                href="https://www.instagram.com/timbouma/"
             >
-               <FaInstagram />
+               <IoLogoInstagram />
             </SocialsCard>
             <SocialsCard title="Follow on GitHub" href="https://github.com/Baqiwaqi">
-               <FaGithub />
+               <IoLogoGithub />
             </SocialsCard>
             <SocialsCard
                title="Follow on LinkedIn"
                href="https://www.linkedin.com/in/tim-bouma-74716996/"
             >
-               <FaLinkedin />
+               <IoLogoLinkedin />
             </SocialsCard>
             <SocialsCard title="Send an email" href="mailto:tim@komit.nl">
-               <FiMail />
+               <IoMdMail />
             </SocialsCard>
          </ul>
       </div>
