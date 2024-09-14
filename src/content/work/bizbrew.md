@@ -2,7 +2,7 @@
 title: 'My Introduction to programming'
 description: 'This Flutter application marked my introduction to mobile development. During my first internship, I was tasked with building a mobile app, and my mentor suggested I use Flutter alongside Firebase. The app, named Bizbrew, allows users to sign in and set their coffee preferences. Simple in concept, but for me, it was an eye-opening experience.'
 pubDatetime: 2021-08-10T00:00:00Z
-image: './public/bizbrew.png'
+image: './bizbrew.png'
 tags: ['Flutter', 'Dart', 'Firebase']
 url: ''
 github: 'https://github.com/Baqiwaqi/Biz_Brew'
