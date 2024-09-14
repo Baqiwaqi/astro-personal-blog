@@ -9,7 +9,6 @@ export const getSortedPosts = (posts: CollectionEntry<'blog'>[]) =>
             Math.floor(new Date(a.data.pubDatetime).getTime() / 1000)
       )
 
-
 export const getSortedWorks = (works: CollectionEntry<'work'>[]) =>
    works
       .filter(({ data }) => !data.draft)
@@ -18,4 +17,3 @@ export const getSortedWorks = (works: CollectionEntry<'work'>[]) =>
             Math.floor(new Date(b.data.pubDatetime).getTime() / 1000) -
             Math.floor(new Date(a.data.pubDatetime).getTime() / 1000)
       )
-

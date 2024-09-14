@@ -9,20 +9,21 @@ const sortedPosts = getSortedPosts(posts)
 ---
 
 <Layout title="Thoughts">
-   <h1 class="text-md text-yellow-500 font-semibold text-primary">All Posts</h1>
+   <h1 class="text-md font-semibold text-primary">All Posts</h1>
    <p class="text-gray-600 text-sm">
       A collection of my thoughts, essays, learnings and other miscellaneous goodies.
    </p>
-
-   {
-      sortedPosts.map((p) => (
-         <BlogArticle
-            id={p.id}
-            slug={p.data.postSlug}
-            title={p.data.title}
-            description={p.data.description}
-            tags={p.data.tags}
-         />
-      ))
-   }
+   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+      {
+         sortedPosts.map((p) => (
+            <BlogArticle
+               id={p.id}
+               slug={p.data.postSlug}
+               title={p.data.title}
+               description={p.data.description}
+               tags={p.data.tags}
+            />
+         ))
+      }
+   </div>
 </Layout>

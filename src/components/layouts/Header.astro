@@ -1,6 +1,6 @@
 ---
 import ThemeToggle from '../ThemeToggle.tsx'
-
+import { FaHome, FaUser, FaBlog, FaBriefcase, FaBars, FaTimes } from 'react-icons/fa'
 const currentPath = Astro.url.pathname
 const routes = [
    {
@@ -9,11 +9,11 @@ const routes = [
    },
    {
       path: '/about',
-      name: 'About',
+      name: 'About me',
    },
    {
-      path: '/thoughts',
-      name: 'Thoughts',
+      path: '/blog',
+      name: 'Blog',
    },
    {
       path: '/works',
@@ -22,26 +22,61 @@ const routes = [
 ]
 ---
 
-<header
-   class="sticky top-0 left-0 right-0 z-10 bg-transparent backdrop:bg-transparent backdrop-filter backdrop-blur-lg"
->
-   <div class="conainer mx-auto max-w-3xl flex items-center justify-between px-4">
-      <div class="space-x-2">
+<header class="md:p-8 xl:p-16 flex justify-between items-center relative">
+   <div class="md:hidden absolute top-4 left-5">
+      <button id="menuToggle" class="text-accent hover:text-accent-dark">
+         <FaBars
+            style={{
+               width: '24px',
+               height: '24px',
+            }}
+         />
+      </button>
+   </div>
+   <div
+      id="menuItems"
+      class="hidden md:block absolute top-12 left-5 md:top-0 md:relative md:w-auto shadow-md md:shadow-none z-10 bg-white"
+   >
+      <div class="grid gap-2 p-4 md:p-0">
          {
             routes.map(({ path, name }) => (
                <a
                   href={path}
-                  class={
-                     currentPath === path
-                        ? 'text-md font-semibold text-yellow-500 hover:text-yellow-600 dark:text-yellow-400 dark:hover:text-yellow-500'
-                        : 'text-md font-semibold hover:text-yellow-400'
-                  }
+                  class={`text-nowrap px-16 py-2 text-lg
+         ${currentPath === path ? 'font-semibold' : 'font-normal'}
+         bg-accent/70 text-white hover:bg-accent/80 hover:scale-105
+         transition-transform duration-200`}
                >
                   {name}
                </a>
             ))
          }
       </div>
-      <ThemeToggle client:visible />
    </div>
 </header>
+
+<script>
+   function setupMenu() {
+      const menuToggle = document.getElementById('menuToggle')
+      const menuItems = document.getElementById('menuItems')
+
+      if (menuToggle && menuItems) {
+         menuToggle.addEventListener('click', () => {
+            menuItems.classList.toggle('hidden')
+         })
+
+         document.addEventListener('click', (event) => {
+            if (
+               menuItems &&
+               !menuItems.contains(event.target as Node) &&
+               !menuToggle.contains(event.target as Node)
+            ) {
+               menuItems.classList.add('hidden')
+            }
+         })
+      }
+   }
+
+   // Run on every page load
+   document.addEventListener('astro:page-load', setupMenu)
+</script>

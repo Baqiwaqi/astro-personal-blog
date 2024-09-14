@@ -1,6 +1,6 @@
 //  create a theme toggle button
 import { useEffect, useState } from 'react'
-import { IoSunny, IoMoon } from 'react-icons/io5/index.js'
+import { IoSunny, IoMoon } from 'react-icons/io5'
 
 const themes = ['light', 'dark']
 

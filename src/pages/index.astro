@@ -17,14 +17,8 @@ const featuredWorks = sortedWorks.filter(({ data }) => data.featured)
 ---
 
 <Layout title="Home">
-   <img
-      src="/profile.png"
-      alt="Astro Logo"
-      class="rounded-full h-52 w-52 object-cover mx-auto"
-   />
-
-   <section class="mt-16">
-      <h2 class="text-md font-semibold text-blue-600">About Me</h2>
+   <section class="mt-8">
+      <h2 class="text-md font-semibold text-accent">About Me</h2>
       <p class="text-base my-4">
          Hello! I'm Tim Bouma from The Netherlands, a self-taught full-stack software
          developer with a passion for creating impactful digital solutions. My entry
@@ -32,13 +26,13 @@ const featuredWorks = sortedWorks.filter(({ data }) => data.featured)
          web applications using Next.js and TypeScript, using the potential of
          serverless resources on Microsoft Azure, while also develeping a mobile
          application using Flutter.
+         <a href="/about" class="text-accent underline">Read more</a>
       </p>
-      <a href="/about" class="text-yellow-500 hover:underline"> More about me</a>
    </section>
 
    <section class="mt-8">
-      <h2 class="text-md font-semibold text-blue-600">Recent Thoughts</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <h2 class="text-md font-semibold text-accent">Blog</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
          {
             featuredPosts.map((p) => (
                <BlogArticle
@@ -53,19 +47,21 @@ const featuredWorks = sortedWorks.filter(({ data }) => data.featured)
       </div>
 
       <section class="mt-8">
-         <h2 class="text-md font-semibold text-blue-600">Works</h2>
-         {
-            featuredWorks.map((p) => (
-               <WorkArticle
-                  id={p.id}
-                  slug={p.data.workSlug}
-                  title={p.data.title}
-                  description={p.data.description}
-                  image={p.data.image}
-                  tags={p.data.tags}
-               />
-            ))
-         }
+         <h2 class="text-md font-semibold text-accent">Works</h2>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+            {
+               featuredWorks.map((p) => (
+                  <WorkArticle
+                     id={p.id}
+                     slug={p.data.workSlug}
+                     title={p.data.title}
+                     description={p.data.description}
+                     image={p.data.image}
+                     tags={p.data.tags}
+                  />
+               ))
+            }
+         </div>
       </section>
    </section>
 </Layout>

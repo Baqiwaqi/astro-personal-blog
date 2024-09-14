@@ -1,19 +1,18 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import ExpArticle from '../components/cards/ExperienceArticle.astro'
+import {
+   FaGithub,
+   FaInstagram,
+   FaLinkedin,
+   FaMailBulk,
+   FaTwitter,
+} from 'react-icons/fa'
 import ExperienceArticle from '../components/cards/ExperienceArticle.astro'
 import SocialsCard from '../components/cards/SocialsCard.astro'
-import {
-   IoLogoGithub,
-   IoLogoInstagram,
-   IoLogoTwitter,
-   IoLogoLinkedin,
-   IoMdMail,
-} from 'react-icons/io'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title="About">
-   <h1 class="text-md font-semibold text-blue-600 my-8">About Me</h1>
+   <h1 class="text-md font-semibold text-accent my-8">About Me</h1>
 
    <div
       class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12"
@@ -29,12 +28,10 @@ import {
       </div>
 
       <div class="lg:order-first lg:row-span-2">
-         <h1
-            class="text-4xl font-bold tracking-tight text-stone-900 dark:text-stone-100 sm:text-5xl"
-         >
+         <h1 class="text-4xl font-bold tracking-tight text-accent sm:text-5xl">
             I&apos;m Tim Bouma, a self-taught full-stack software developer.
          </h1>
-         <div class="mt-6 space-y-7 text-base text-stone-900 dark:text-stone-300">
+         <div class="mt-6 space-y-7 text-base text-accent">
             <p>
                Hello! I'm Tim Bouma from De Bilt, a self-taught full-stack software
                developer with a passion for creating impactful digital solutions. My
@@ -61,36 +58,43 @@ import {
                title="Follow on Twitter"
                href="https://twitter.com/timbouma"
             >
-               <IoLogoTwitter />
+               <FaTwitter />
             </SocialsCard>
             <SocialsCard
                title="Follow on Instagram"
                href="https://www.instagram.com/timbouma/"
             >
-               <IoLogoInstagram />
+               <FaInstagram />
             </SocialsCard>
             <SocialsCard title="Follow on GitHub" href="https://github.com/Baqiwaqi">
-               <IoLogoGithub />
+               <FaGithub />
             </SocialsCard>
             <SocialsCard
                title="Follow on LinkedIn"
                href="https://www.linkedin.com/in/tim-bouma-74716996/"
             >
-               <IoLogoLinkedin />
+               <FaLinkedin />
             </SocialsCard>
             <SocialsCard title="Send an email" href="mailto:tim@komit.nl">
-               <IoMdMail />
+               <FaMailBulk />
             </SocialsCard>
          </ul>
       </div>
    </div>
 
    <section class="mt-8">
-      <h2 class="text-md font-semibold uppercase text-blue-600">Experience</h2>
+      <h2 class="text-md font-semibold uppercase text-accent">Experience</h2>
+      <ExperienceArticle
+         company="Komit Services"
+         role="CTO & Co-founder"
+         timeline="2023 - currently"
+         description="As CTO and co-founder of Komit Services, I am responsible for the development of web applications for logistics industry."
+         link="https://bizworx.nl/"
+      />
       <ExperienceArticle
          company="Bizworx Solutions Provider"
          role="Software developer"
-         timeline="2020 - currently"
+         timeline="2020 - 2023"
          description="In mijn huidige functie ben ik verantwoordelijk voor de ontwikkeling van webapplicaties en tools met Next.js in TypeScript. Hierbij maak ik gebruik van serverless resources op het Microsoft Azure-platform."
          link="https://bizworx.nl/"
       />

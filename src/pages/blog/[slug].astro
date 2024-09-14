@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import Layout from '../../layouts/Layout.astro'
+import '../../styles/markdown.css'
+
+export interface Props {
+   post: CollectionEntry<'blog'>
+}
+
+export async function getStaticPaths() {
+   const posts = await getCollection('blog')
+
+   const postResults = posts.map((post) => ({
+      params: { slug: post.slug },
+      props: { post },
+   }))
+
+   return [...postResults]
+}
+
+const { post } = Astro.props
+
+const { Content } = await post.render()
+---
+
+<Layout title={post.data.title}>
+   <!-- go back button -->
+   <a href="/blog" class="text-accent hover:text-secondary/80 mt-4"
+      >Back to all posts</a
+   >
+   <!-- title -->
+   <h1 class="text-accent mt-8" transition:name={post.id}>{post.data.title}</h1>
+   <!-- markdown content -->
+   <Content />
+</Layout>

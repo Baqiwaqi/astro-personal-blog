@@ -13,7 +13,7 @@ const { company, role, timeline, description, link } = Astro.props
 <article class="group grid grid-cols-4 mt-8">
    <span class="col-span-1 font-thin text-sm">{timeline}</span>
    <div class="col-span-3">
-      <h1 class="text-md font-medium group-hover:text-yellow-500">
+      <h1 class="text-md font-medium group-hover:text-secondary">
          <a href={link} target="_blank">{role}</a>
       </h1>
       <h2 class="text-sm font-normal">{company}</h2>
